@@ -1,1 +1,1 @@
-Code for my webpage [jbirky.github.io](http://jbirky.github.io).
+Code for my [webpage](http://jbirky.github.io).
