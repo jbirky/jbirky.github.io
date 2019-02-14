@@ -1,3 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+
+
 html
 { height: 100%;}
 
@@ -6,33 +10,39 @@ html
   padding: 0;}
 
 body
-{ font: normal .80em 'trebuchet ms', arial, sans-serif;
+{ font: lighter 12pt Source Sans Pro;
   background: #F0EFE2 url(background.png) repeat;
   color: #000;}
 
 p
-{ padding: 0 0 20px 0;
+{ font: 'Open Sans';
+  padding: 0 0 20px 0;
   line-height: 1.7em;}
 
 img
 { border: 0;}
 
-h1, h2, h3, h4, h5, h6 
-{ font: normal 175% 'century gothic', arial, sans-serif;
+h1
+{ font: normal 18pt Open Sans;
   color: #000;
-  margin: 0 0 15px 0;
+  margin: 0 0 5px 0;
   padding: 15px 0 5px 0;}
 
 h2
-{ font: normal 175% 'century gothic', arial, sans-serif;}
+{ font: normal 16pt Open Sans;
+  margin: 0 0 5px 0;
+  padding: 15px 0 5px 0;}
+
+h3
+{ font: normal 14pt Open Sans;}
 
 h4, h5, h6
 { margin: 0;
   padding: 0 0 5px 0;
-  font: normal 120% arial, sans-serif;}
+  font: normal 14pt Open Sans;}
 
 h5, h6
-{ font: italic 95% arial, sans-serif;
+{ font: italic 11pt Open Sans;
   padding: 0 0 15px 0;}
 
 a, a:hover
@@ -98,13 +108,13 @@ ol li
   left: 0;}
 
 #logo h1, #logo h2
-{ font: normal 300% 'century gothic', arial, sans-serif;
+{ font: normal 30pt Source Sans Pro;
   border-bottom: 0;
   text-transform: none;
   margin: 0;}
 
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
-{ padding: 22px 0 0 0;
+{ padding: 25px 0 0 0;
   color: #FFF;
   letter-spacing: -1px;
   text-decoration: none;}
@@ -113,7 +123,7 @@ ol li
 { color: #FFF;}
 
 #logo_text h2
-{ font-size: 100%;
+{ font-size: 11pt;
   padding: 4px 0 0 0;
   color: #FFF;}
 
@@ -133,7 +143,7 @@ ul#menu li
 
 ul#menu li a
 { letter-spacing: 0.1em;
-  font: normal 100% arial, sans-serif;
+  font: normal 10pt 'lucida sans unicode', arial, sans-serif;
   display: block; 
   float: left; 
   height: 17px;
@@ -197,9 +207,9 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 
 #footer
 { width: 898px;
-  font: normal 100% 'lucida sans unicode', arial, sans-serif;
+  font: normal 8pt 'lucida sans unicode', arial, sans-serif;
   height: 33px;
-  padding: 24px 0 5px 0;
+  padding: 18px 0 5px 0;
   text-align: center; 
   background: transparent;
   color: #FFF;
