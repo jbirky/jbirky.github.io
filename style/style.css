@@ -36,12 +36,16 @@ h2
 h3
 { font: normal 14pt Open Sans;}
 
-h4, h5, h6
+h4
 { margin: 0;
   padding: 0 0 5px 0;
-  font: normal 14pt Open Sans;}
+  font: normal 12pt Open Sans;}
 
-h5, h6
+h5
+{ font: lighter 11pt Open Sans;
+  padding: 0 0 15px 0;}
+
+h6
 { font: italic 11pt Open Sans;
   padding: 0 0 15px 0;}
 
