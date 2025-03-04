@@ -10,7 +10,7 @@ html
   padding: 0;}
 
 body
-{ font: lighter 12pt Source Sans Pro;
+{ font: lighter 15pt Source Sans Pro;
   background: #F0EFE2 url(background.png) repeat;
   color: #000;}
 
@@ -23,18 +23,18 @@ img
 { border: 0;}
 
 h1
-{ font: normal 18pt Open Sans;
+{ font: normal 20pt Open Sans;
   color: #000;
   margin: 0 0 5px 0;
-  padding: 15px 0 5px 0;}
+  padding: 15px 0 10px 0;}
 
 h2
-{ font: normal 16pt Open Sans;
+{ font: normal 18pt Open Sans;
   margin: 0 0 5px 0;
-  padding: 15px 0 5px 0;}
+  padding: 15px 0 10px 0;}
 
 h3
-{ font: normal 14pt Open Sans;}
+{ font: normal 16pt Open Sans;}
 
 h4
 { margin: 0;
@@ -42,11 +42,11 @@ h4
   font: normal 12pt Open Sans;}
 
 h5
-{ font: lighter 11pt Open Sans;
+{ font: lighter 14pt Open Sans;
   padding: 0 0 15px 0;}
 
 h6
-{ font: italic 11pt Open Sans;
+{ font: italic 14pt Open Sans;
   padding: 0 0 15px 0;}
 
 a, a:hover
@@ -101,7 +101,7 @@ ol li
   height: 202px;}
 
 #logo
-{ width: 898px;
+{ width: 1050px;
   position: relative;
   height: 148px;
   border-bottom: 2px solid #FFF;}
@@ -120,7 +120,7 @@ ol li
 #logo_text h1, #logo_text h1 a, #logo_text h1 a:hover 
 { padding: 25px 0 0 0;
   color: #FFF;
-  letter-spacing: -1px;
+  letter-spacing: 0px;
   text-decoration: none;}
 
 #logo_text h1 a .logo_colour
@@ -132,7 +132,7 @@ ol li
   color: #FFF;}
 
 #menubar
-{ width: 898px;
+{ width: 1050px;
   height: 52px;
   padding: 0;
   background: #000;} 
@@ -164,7 +164,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   background: transparent url(transparent_light.png) repeat;}
 
 #site_content
-{ width: 854px;
+{ width: 1000px;
   overflow: hidden;
   margin: 0 auto 0 auto;
   padding: 0 24px 20px 20px;
@@ -196,7 +196,7 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
 #content
 { text-align: left;
   float: left;
-  width: 595px;
+  width: 750px;
   padding: 0;}
 
 #content ul
@@ -210,8 +210,8 @@ ul#menu li a:hover, ul#menu li.selected a, ul#menu li.selected a:hover
   line-height: 1.5em;}
 
 #footer
-{ width: 898px;
-  font: normal 8pt 'lucida sans unicode', arial, sans-serif;
+{ width: 1050px;
+  font: normal 10pt 'lucida sans unicode', arial, sans-serif;
   height: 33px;
   padding: 18px 0 5px 0;
   text-align: center; 
