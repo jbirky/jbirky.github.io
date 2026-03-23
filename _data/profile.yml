@@ -1,0 +1,37 @@
+primary_name: "Jessica Birky"
+secondary_name: ""
+navbar_name: "Jessica Birky"
+
+positions:
+- name: PhD Candidate &amp; NSF Fellow
+- name: Department of Astronomy, University of Washington
+
+email: "jbirky@uw.edu"
+cv_link: /assets/jbirky_cv.pdf
+github: jbirky
+ads: https://ui.adsabs.harvard.edu/search/q=author%3A%22Birky%2C%20Jessica%22&sort=date%20desc%2C%20bibcode%20desc&p_=0
+# twitter:
+# linkedin:
+orcid: 0000-0002-7961-6881
+
+short_bio_text_justify: false
+short_bio: >-
+  <p>
+    I'm a PhD candidate UW interested in computational astrophysics, data science, and open source code. 
+    I work on finding novel ways to use large-scale surveys, probabilistic inference, and machine learning to understand the fundamental properties of stars.
+  </p>
+
+portrait_url: /assets/images/photos/portrait.jpg
+# portrait_caption: >-
+
+education:
+- name: University of Washington
+  position: >-
+    PhD Astronomy (2026) <br/>
+    MS Astronomy (2021)
+  date: 2019 - present
+- name: University of California, San Diego
+  position: BS Physics
+  date: 2015 - 2019
+
+

@@ -1,0 +1,9 @@
+pages:
+- name: Home
+  url: /
+- name: Publications
+  url: /publications
+- name: Open Source
+  url: /code
+- name: CV
+  url: /cv

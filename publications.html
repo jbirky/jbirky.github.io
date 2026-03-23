@@ -1,0 +1,83 @@
+---
+layout: default
+title : Publications
+navbar_title: Publications
+body_attr: >-
+  data-spy="scroll" data-target="#navbar-year" data-offset="100"
+---
+
+{% assign pubs_by_year = site.publications | sort: "date" | reverse | group_by_exp: "item", "item.date | date: '%Y'" %}
+
+<!-- Filter buttons -->
+<div class="pt-4 mb-3">
+    <span class="mr-2 text-muted">Select:</span>
+    <div class="btn-group btn-group-sm" role="group">
+        <button type="button" class="btn btn-primary pub-filter active" data-filter="all">All</button>
+        <button type="button" class="btn btn-outline-primary pub-filter" data-filter="first">First Author</button>
+        <button type="button" class="btn btn-outline-primary pub-filter" data-filter="coauthor">Co-author</button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-12 col-lg-10">
+        {% for year in pubs_by_year %}
+        <h2 class="pt-4 pub-year-heading" id="year-{{ year.name }}">{{ year.name }}</h2>
+        <div class="my-0 p-0 bg-white shadow-sm rounded-xl">
+            {% for item in year.items %}
+                {% include widgets/publication_item.html item=item hide_bottom_border=forloop.last first=forloop.first last=forloop.last %}
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-2 d-none d-lg-block">
+        <div id="navbar-year" class="nav nav-pills flex-column sticky-top" style="top: 80px">
+            {% for year in pubs_by_year %}
+            <a class="nav-link d-block" href="#year-{{ year.name }}">{{ year.name }}</a>
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var buttons = document.querySelectorAll(".pub-filter");
+    buttons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            // Update active button
+            buttons.forEach(function (b) {
+                b.classList.remove("active", "btn-primary");
+                b.classList.add("btn-outline-primary");
+            });
+            btn.classList.add("active", "btn-primary");
+            btn.classList.remove("btn-outline-primary");
+
+            var filter = btn.getAttribute("data-filter");
+            var items = document.querySelectorAll(".pub-item");
+
+            items.forEach(function (item) {
+                var role = item.getAttribute("data-author-role");
+                if (filter === "all" || role === filter) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            });
+
+            // Hide year headings + containers that have no visible items
+            document.querySelectorAll(".pub-year-heading").forEach(function (heading) {
+                var container = heading.nextElementSibling;
+                var visibleItems = container.querySelectorAll(".pub-item:not([style*='display: none'])");
+                if (visibleItems.length === 0) {
+                    heading.style.display = "none";
+                    container.style.display = "none";
+                } else {
+                    heading.style.display = "";
+                    container.style.display = "";
+                }
+            });
+        });
+    });
+});
+</script>

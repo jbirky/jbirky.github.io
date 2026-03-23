@@ -1,197 +1,304 @@
-<!DOCTYPE HTML>
-<html>
+---
+layout: default
+title: CV
+navbar_title: CV
+---
 
-<head>
-  <title>Jessica Birky</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-</head>
+<div class="my-3 p-0 bg-white shadow-sm rounded-xl cv-section">
+<div class="p-4 p-md-5">
 
-<body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">Jessica Birky</a></h1>
-          <!-- <h2>---- astrophysics PhD student ----</h2> -->
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="https://github.com/jbirky">Code</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li class="selected"><a href="cv/jbirky_cv.pdf">CV</a></li>
-        </ul>
-      </div>
+<!-- Download button -->
+<div class="mb-4">
+    <a href="{{ '/assets/jbirky_cv.pdf' | relative_url }}" target="_blank" class="btn btn-primary">
+        <i class="fas fa-file-pdf"></i> Download PDF
+    </a>
+    <span class="ml-2 text-muted small"><i>Last updated: Feb 2025</i></span>
+</div>
+
+<!-- Header -->
+<div class="row mb-3">
+    <div class="col-md-4 small">
+        PhD Student<br>
+        University of Washington<br>
+        <a href="https://jessicabirky.com">https://jessicabirky.com</a>
     </div>
-
-    <div id="site_content">
-      <div class="sidebar">
-        <h2>Contact</h2>
-        <hr><br>
-        Email: jbirky at uw dot edu <br>
-        Github: <a href="https://github.com/jbirky">jbirky</a>        
-      </div>
-
-
-      <div id="content">
-        <h2>Cirriculum Vitae</h2>
-        <hr><br />
-        Download Full Version: [<a href="cv/jbirky_cv.pdf"><font color="red">PDF</font></a>] <br>
-        <font style="font-size:10pt">(Updated Jul. 2024)</font>
-        
-        <p></p>
-        <h4><u>Education</u></h4>
-        <td>
-          <div style="float:left; font-weight:bold">University of Washington</div>
-          <div style="float:right">2019 - Present</div>
-        </td><br>
-        PhD Astronomy (expected) -- Interdisciplinary Data Science Track <br>
-        MS Astronomy (2021)
-        <p></p>
-        <td>
-          <div style="float:left; font-weight:bold">University of California, San Diego</div>
-          <div style="float:right">2015 - 2019</div>
-        </td><br>
-        BS Physics
-        <p></p>
-
-
-        <h4><u>Awards/Honors</u></h4>
-        <td>
-          <div style="float:left">NSF Graduate Research Fellowship</div>
-          <div style="float:right">2019</div>
-        </td><br>
-        <td>
-          <div style="float:left">MPIA Summer Intern Fellowship</div>
-          <div style="float:right">2017, 18</div>
-        </td><br>
-        <td>
-          <div style="float:left">UCSD Provost Honors</div>
-          <div style="float:right">2018, 19</div>
-        </td><br>
-        <td>
-          <div style="float:left">Frances Hellman Research Scholarship</div>
-          <div style="float:right">2017</div>
-        </td><br>
-        <td>
-          <div style="float:left">Physics Chair Challenge Award</div>
-          <div style="float:right">2016, 17, 18</div>
-        </td><br>
-        <p></p>
-
-
-        <h4><u>Research Experience</u></h4>
-
-        <td>
-          <div style="float:left; font-weight:bold">University of Washington</div>
-          <div style="float:right">Sept. 2019 - Present</div>
-        </td><br>
-        <span style="font-style:italic">Advisor : James Davenport (UW/DIRAC), Rory Barnes (UW/VPL)</span><br>
-        Topic : tidal evolution of eclipsing binaries in K2/TESS
-        <p></p>
-
-        <td>
-          <div style="float:left; font-weight:bold">Max Planck Institute f<span>&#252;</span>r Astronomie</div>
-          <div style="float:right">Summer 2017, 2018</div>
-        </td><br>
-        <span style="font-style:italic">Advisor : David Hogg (NYU/MPIA/Flatiron)</span><br>
-        Topic : data-driven models of M dwarfs
-        <p></p>
-
-        <td>
-          <div style="float:left; font-weight:bold">University of California, San Diego</div>
-          <div style="float:right">May 2016 - May 2019</div>
-        </td><br>
-        <span style="font-style:italic">Advisor : Adam Burgasser (UCSD)</span><br>
-        Topic : spectroscopic parameters of low-mass stars using atmosphere models
-        <p></p>
-
-
-        <h4><u>Publications</u></h4>
-        <span style="font-style:italic"><u>Lead-author Papers (underlined = undergraduates
-        mentored):</u></span><br>
-        <p></p>
-          <p><strong>Birky, J.</strong>, Barnes, R. K., 2023, <em>Prospects of Constraining Tidal Dissipation in Binary Stars</em> (Submitted ApJ) </p>
-          <p><strong>Birky, J.</strong>, Barnes, R. K., Davenport, J. R. A., 2023, <em>ALABI: Active Learning for Accelerated Bayesian Inference</em> (In prep) </p>
-          <p><u>Hobson-Ritz, M.</u>, <strong>Birky, J.</strong>, <u>Peterson, L.</u>, <u>Gwartney, P.</u>, <u>Delker, J.</u>, <u>Wong, R.</u>, Gordon, T., Davenport, J. R. A., Barnes, R. K., 2023, <em>Tidal Synchronization of TESS Eclipsing Binaries</em> (In Prep) </p>
-          <p><strong>Birky, J.</strong>, Barnes, R. K., Fleming, D. P., 2021, <em>Improved Constraints for Trappist-1 XUV Luminosity Evolution</em>, RNAAS, 5, 122 (arXiv:2105.12562) [<a href="https://iopscience.iop.org/article/10.3847/2515-5172/ac034c">paper </a>] [<a href="https://github.com/jbirky/trappist_xuv">code </a>] </p>
-          <p><b>Birky, J.</strong>, Hogg, D. W., Mann, A., Burgasser, A.J., 2020, <em>Temperatures and Metallicities for M dwarfs in the APOGEE  Survey</em>, ApJ, 892, 1 (arXiv:2001.04962) [<a  href="https://iopscience.iop.org/article/10.3847/1538-4357/ab7004">paper </a>] [<a href="https://github.com/jbirky/Mdwarf_project">code </a>] </p>
-        <!-- [2] <b>Birky, J.</b>, Barnes, R. K., Fleming, D. P., 2021, Improved Constraints for Trappist-1 XUV Luminosity Evolution, RNAAS, 5, 122 (arXiv:2105.12562)  [<a href="https://iopscience.iop.org/article/10.3847/2515-5172/ac034c"><font color="red">Paper</font></a>] [<a href="https://github.com/jbirky/trappist_xuv"><font color="red">Code</font></a>]
-        <p></p>
-        [1] <b>Birky, J.</b>, Hogg, D. W., Mann, A., Burgasser, A. J., 2020, Temperatures and Metallicities of M dwarfs in the APOGEE Survey, ApJ, 892, 1 (arXiv:2001.04962) [<a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab7004"><font color="red">Paper</font></a>] [<a href="https://github.com/jbirky/Mdwarf_project"><font color="red">Code</font></a>]
-        <p></p> -->
-
-        <span style="font-style:italic"><u>Co-author:</u></span><br>
-          <p>Barnes, R., K., <strong>Birky J.</strong> et. al 2023,
-            <em>History and Habitability of the LP 791-18 Planetary System</em> (In
-            prep)
-          </p>
-          <p>Barnes, R. K., Amaral L., <strong>Birky J.</strong>, et al. 2023,
-            <em>History and Habitability of the LP 890-9 Planetary System</em>
-            (Submitted PSJ)
-          </p>
-          <p>Gialluca, M. T., Barnes, R. K., et. al (incl. <strong>Birky,
-              J.</strong>) 2023, <em>Bayesian Calculations of Water Inventories and
-              Oxygen Accumulation on the TRAPPIST-1 Planets</em>, PSJ, 5, 137 [<a
-              href="https://iopscience.iop.org/article/10.3847/PSJ/ad4454/meta">paper </a>]</p>
-          <p>Hsu, C., Burgasser, A. J., et al. (incl. <strong>Birky,
-              J.</strong>) 2022, <em>The Brown Dwarf Kinematics Project (BDKP). VI:
-              Ultracool Dwarf Radial and Rotational Velocity Survey with SDSS/APOGEE
-              High-Resolution Spectrometer</em> (Submitted ApJ)</p>
-          <p>Hsu, C., Burgasser, A. J., et al. (incl. <strong>Birky,
-              J.</strong>) 2021, <em>The Brown Dwarf Kinematics Project (BDKP). V.
-              Radial and Rotational Velocities of T Dwarfs From Keck/NIRSPEC
-              High-Resolution Spectroscopy</em> (arXiv:2107.01222) [<a href="https://arxiv.org/abs/2107.01222">paper </a>] [<a
-              href="https://github.com/chihchunhsu/smart">code </a>]</p>
-          <p>Davenport, J. R. A., Windemuth, D., et al. (incl. <strong>Birky,
-              J.</strong>) 2021, <em>The Rise and Fall of the Eclipsing Binary, HS
-              Hydra</em>, <em>ApJL</em> (arXiv:2107.10954) [<a href="https://arxiv.org/abs/2107.10954">paper </a>]</p>
-          <p>Martin, D. V., El-Badry, K., et al. (incl. <strong>Birky,
-              J.</strong>) 2021, <em>TOI-1259Ab–a gas giant with 2.6% deep transits
-              and a bound white dwarf companion</em>, <em>MNRAS</em>
-            (arXiv:2101.02707) [<a href="https://arxiv.org/abs/2101.02707">paper </a>]</p>
-          <p>Burgasser, A. J., Splat Development Team (incl. <strong>Birky,
-              J.</strong>), <em>The SpeX Prism Library Analysis Toolkit (SPLAT): A
-              Data Curation Model</em>, Bull. Astr. Soc. India, 00, 1-6, 2017
-            (arXiv:1707.00062)</p>
-        <!-- [3] Hsu, C., Burgasser, A. J., et. al (incl. <b>Birky, J.</b>) 2021, The Brown Dwarf Kinematics Project (BDKP). V. Radial and Rotational Velocities of T Dwarfs From Keck/NIRSPEC High-Resolution Spectroscopy, ApJ [<a href="https://github.com/chihchunhsu/smart"><font color="red">Code</font></a>]
-        <p></p>
-        [2] Davenport, J. R. A., Windemuth, D., et. al (incl. <b>Birky, J.</b>) 2021, The Rise and Fall of the Eclipsing Binary, HS Hydra, ApJL (arXiv :2107.10954) [<a href="https://arxiv.org/abs/2107.10954"><font color="red">Paper</font></a>]
-        <p></p>
-        [1] Martin, D. V., El-Badry, K., et al. (incl. <b>Birky, J.</b>) 2021, TOI-1259Ab–a gas giant with 2.6% deep transits and a bound white dwarf companion, MNRAS (arXiv :2101.02707) [<a href="https://arxiv.org/abs/2101.02707"><font color="red">Paper</font></a>]
-        <p></p> -->
-
-
-        <!-- <h4><u>Teaching Experience</u></h4>
-        <td>
-          <div style="float:left; font-weight:bold">Teaching Assistant:</div>
-        </td><br>
-        <td>
-          <div style="float:left">ASTR 150: The Planets (Instructors: Nicole Kelly)</div>
-          <div style="float:right">Spring 2021</div>
-        </td><br>
-        <td>
-          <div style="float:left">ASTR 150: The Planets (Instructors: Nicole Kelly, Eric Agol)</div>
-          <div style="float:right">Winter 2021</div>
-        </td><br>
-        <td>
-          <div style="float:left">ASTR 102: Introduction to Astronomy (Instructor: Scott Anderson)</div>
-          <div style="float:right">Fall 2020</div>
-        </td><br>
-        <p></p> -->
-
-      </div>
+    <div class="col-md-4 text-md-center">
+        <h2 class="mb-0">Jessica Birky</h2>
     </div>
-    <div id="footer">
-      Copyright &copy; Jessica Birky | <a href="http://www.html5webtemplates.co.uk">Source</a>
+    <div class="col-md-4 text-md-right small">
+        <a href="mailto:jbirky@uw.edu">jbirky@uw.edu</a><br>
+        <a href="https://orcid.org/0000-0002-7961-6881">ORCID: 0000-0002-7961-6881</a>
     </div>
-  </div>
-</body>
-</html>
+</div>
+
+<p><strong>Research Interests:</strong> Stars, binary stars, stellar populations. Stellar and planetary dynamics. Large scale surveys, data analysis and modeling, machine learning and data-driven models.</p>
+
+<hr>
+
+<!-- Education -->
+<h5 class="text-primary mt-4">Education</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><strong>PhD Astronomy</strong> (Data Science Program), University of Washington &mdash; Seattle</div><div class="no-break">2021 &mdash; Present</div></div>
+<div class="d-flex justify-content-between mt-2"><div><strong>MS Astronomy,</strong> University of Washington &mdash; Seattle</div><div class="no-break">2019 &mdash; 2021</div></div>
+<div class="d-flex justify-content-between mt-2"><div><strong>BS Physics,</strong> University of California &mdash; San Diego</div><div class="no-break">2015 &mdash; 2019</div></div>
+
+<!-- Research Experience -->
+<h5 class="text-primary mt-4">Research Experience</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><strong>Graduate Student Researcher</strong> &mdash; University of Washington, Seattle WA</div><div class="no-break">Aug 2019 &mdash; Present</div></div>
+<div><em>Advisor: Rory Barnes, Co-advisor: James Davenport</em></div>
+
+<div class="d-flex justify-content-between mt-3"><div><strong>Undergraduate Researcher</strong> &mdash; University of California San Diego, La Jolla CA</div><div class="no-break">May 2016 &mdash; May 2019</div></div>
+<div><em>Advisor: Adam Burgasser</em></div>
+
+<div class="d-flex justify-content-between mt-3"><div><strong>Research Intern</strong> &mdash; Max Planck Institute f&uuml;r Astronomie, Heidelberg DE</div><div class="no-break">Summer 2017 &amp; 2018</div></div>
+<div><em>Advisor: David Hogg</em></div>
+
+<!-- Awards -->
+<h5 class="text-primary mt-4">Selected Awards &amp; Honors</h5>
+<hr class="mt-0">
+
+<table class="table table-sm table-borderless mb-0">
+    <tr><td class="no-break" style="width:10em"><strong>2024</strong></td><td>UW Astronomy Excellence in Teaching Award</td></tr>
+    <tr><td><strong>2024</strong></td><td>Washington Space Grant Fellowship</td></tr>
+    <tr><td><strong>2019 &mdash; 2024</strong></td><td><strong>NSF Graduate Research Fellowship</strong></td></tr>
+    <tr><td><strong>2022, 2024</strong></td><td>UW Astronomy Jacobsen Award</td></tr>
+    <tr><td><strong>2018, 2019</strong></td><td>UC San Diego Provost Honors</td></tr>
+    <tr><td><strong>2017, 2018</strong></td><td>Max Planck Institute Fellowship</td></tr>
+    <tr><td><strong>2017</strong></td><td>Frances Hellman Research Scholarship</td></tr>
+    <tr><td><strong>2016 &mdash; 2018</strong></td><td>Physics Chair Challenge Award</td></tr>
+</table>
+
+<!-- Publications -->
+<h5 class="text-primary mt-4">Publications</h5>
+<hr class="mt-0">
+
+<p><em>Lead-author Papers (<u>underlined</u> = undergraduates mentored):</em></p>
+<ul>
+    <li><strong>Birky, J.</strong>, Barnes, R. K., Davenport, J. R. A., 2024, <em>ALABI: Active Learning for Accelerated Bayesian Inference</em> (In prep)</li>
+    <li><u>Hobson-Ritz, M.</u>, <strong>Birky, J.</strong>, <u>Peterson, L.</u>, <u>Gwartney, P.</u>, <u>Delker, J.</u>, <u>Wong, R.</u>, Gordon, T., Davenport, J. R. A., Barnes, R. K., 2024, <em>Tidal Synchronization of TESS Eclipsing Binaries</em>, ApJ [<a href="https://arxiv.org/abs/2501.04082" target="_blank">arxiv:2501.04082</a>]</li>
+    <li><strong>Birky, J.</strong>, Barnes, R. K., Davenport, J. R. A., 2024, <em>Prospects of Constraining Tidal Dissipation in Binary Stars</em>, In review ApJ</li>
+    <li><strong>Birky, J.</strong>, Barnes, R. K., Fleming, D. P., 2021, <em>Improved Constraints for Trappist-1 XUV Luminosity Evolution</em>, RNAAS, 5, 122 [<a href="https://iopscience.iop.org/article/10.3847/2515-5172/ac034c" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2105.12562" target="_blank">arxiv</a>] [<a href="https://github.com/jbirky/trappist_xuv" target="_blank">code</a>]</li>
+    <li><strong>Birky, J.</strong>, Hogg, D. W., Mann, A., Burgasser, A. J., 2020, <em>Temperatures and Metallicities for M dwarfs in the APOGEE Survey</em>, ApJ, 892, 1 [<a href="https://iopscience.iop.org/article/10.3847/1538-4357/ab7004" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2001.04962" target="_blank">arxiv</a>] [<a href="https://github.com/jbirky/Mdwarf_project" target="_blank">code</a>]</li>
+</ul>
+
+<p><em>Co-author Papers:</em></p>
+<ul>
+    <li>Davenport, J. R. A., Charbour Barra, F., et al. (incl. <strong>Birky, J.</strong>) 2024, <em>Automated Spectroscopic Wavelength Calibration using Dynamic Time Warping</em> (In prep)</li>
+    <li>Barnes, R. K., Amaral L., <strong>Birky J.</strong>, et al. 2023, <em>History and Habitability of the LP 890-9 Planetary System</em>, PSJ, 6, 25 [<a href="https://iopscience.iop.org/article/10.3847/PSJ/ad94dc" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2412.02743" target="_blank">arxiv</a>]</li>
+    <li>Gialluca, M. T., Barnes, R. K., et al. (incl. <strong>Birky, J.</strong>) 2024, <em>Bayesian Calculations of Water Inventories and Oxygen Accumulation on the TRAPPIST-1 Planets</em>, PSJ, 5, 137 [<a href="https://iopscience.iop.org/article/10.3847/PSJ/ad4454/meta" target="_blank">doi</a>]</li>
+    <li>Hsu, C., Burgasser, A. J., et al. (incl. <strong>Birky, J.</strong>) 2024, <em>The Brown Dwarf Kinematics Project (BDKP). VI: Ultracool Dwarf Radial and Rotational Velocity Survey with SDSS/APOGEE High-Resolution Spectrometer</em>, ApJS, 274, 40 [<a href="https://iopscience.iop.org/article/10.3847/1538-4365/ad6b27" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2403.13760" target="_blank">arxiv</a>]</li>
+    <li>Hsu, C., Burgasser, A. J., et al. (incl. <strong>Birky, J.</strong>) 2021, <em>The Brown Dwarf Kinematics Project (BDKP). V. Radial and Rotational Velocities of T Dwarfs From Keck/NIRSPEC High-Resolution Spectroscopy</em> [<a href="https://iopscience.iop.org/article/10.3847/1538-4365/ac1c7d/meta" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2107.01222" target="_blank">arxiv</a>] [<a href="https://github.com/chihchunhsu/smart" target="_blank">code</a>]</li>
+    <li>Davenport, J. R. A., Windemuth, D., et al. (incl. <strong>Birky, J.</strong>) 2021, <em>The Rise and Fall of the Eclipsing Binary, HS Hydra</em>, ApJL, 162, 189 [<a href="https://iopscience.iop.org/article/10.3847/1538-3881/ac1f97" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2107.10954" target="_blank">arxiv</a>]</li>
+    <li>Martin, D. V., El-Badry, K., et al. (incl. <strong>Birky, J.</strong>) 2021, <em>TOI-1259Ab&mdash;a gas giant with 2.6% deep transits and a bound white dwarf companion</em>, MNRAS, 507, 3 [<a href="https://academic.oup.com/mnras/article/507/3/4132/6329054" target="_blank">doi</a>] [<a href="https://arxiv.org/abs/2101.02707" target="_blank">arxiv</a>]</li>
+    <li>Burgasser, A. J., Splat Development Team (incl. <strong>Birky, J.</strong>), <em>The SpeX Prism Library Analysis Toolkit (SPLAT): A Data Curation Model</em>, Bull. Astr. Soc. India, 00, 1-6, 2017 [<a href="https://arxiv.org/abs/1707.00062" target="_blank">arxiv</a>]</li>
+</ul>
+
+<!-- Talks / Posters -->
+<h5 class="text-primary mt-4">Talks / Posters</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><em>Prospects of Constraining Tidal Dissipation of Low-mass Stars</em></div><div class="no-break ml-3">2024</div></div>
+<div class="small mb-2">Poster presentation at Cool Stars 22, UC San Diego</div>
+
+<div class="d-flex justify-content-between"><div><em>The Formation of Short-period Binaries in Hierarchical Triples</em></div><div class="no-break ml-3">2024</div></div>
+<div class="small mb-2">General Exam, University of Washington</div>
+
+<div class="d-flex justify-content-between"><div><em>Prospects of Constraining Tidal Dissipation of Low-mass Stars</em></div><div class="no-break ml-3">2023</div></div>
+<div class="small mb-2">Qualifying Exam, University of Washington</div>
+
+<div class="d-flex justify-content-between"><div><em>Prospects of Constraining Tidal Dissipation of Low-mass Stars</em></div><div class="no-break ml-3">2023</div></div>
+<div class="small mb-2">Talk at DDA Meeting 54, Lansing, Michigan</div>
+
+<div class="d-flex justify-content-between"><div><em>Challenges in Establishing an Accurate Model of Tidal Dissipation for Low-mass Binary Stars</em></div><div class="no-break ml-3">2023</div></div>
+<div class="small mb-2">Poster presentation at AAS 241, Seattle WA</div>
+
+<div class="d-flex justify-content-between"><div><em><strong>(Invited)</strong> Precise abundances of M dwarfs: data driven models applied to large scale surveys</em></div><div class="no-break ml-3">2022</div></div>
+<div class="small mb-2">Talk at Cool Stars 21, Toulouse, France</div>
+
+<div class="d-flex justify-content-between"><div><em>Constraining the XUV Luminosity Evolution of Low Mass Stars</em></div><div class="no-break ml-3">2022</div></div>
+<div class="small mb-2">Poster presentation at Cool Stars 21, Toulouse, France</div>
+
+<div class="d-flex justify-content-between"><div><em>ALABI: Active Learning for Accelerated Bayesian Inference</em></div><div class="no-break ml-3">2021</div></div>
+<div class="small mb-2">IAU Symposium 362 &mdash; Predictive Power of Computational Astrophysics, Virtual Conference</div>
+
+<div class="d-flex justify-content-between"><div><em>Systematic Classification of TESS Eclipsing Binaries</em></div><div class="no-break ml-3">2020</div></div>
+<div class="small mb-2">Poster presentation at AAS Meeting 235, Honolulu HI [<a href="https://doi.org/10.5281/zenodo.3605647" target="_blank">poster</a>]</div>
+
+<div class="d-flex justify-content-between"><div><em>Physical Parameters for 10,000+ M dwarfs in the APOGEE Survey</em></div><div class="no-break ml-3">2019</div></div>
+<div class="small mb-2">Talk at Sloan Digital Sky Survey Collaboration Meeting, Ensenada, Mexico</div>
+
+<div class="d-flex justify-content-between"><div><em>Precise Stellar Parameters for 10,000+ APOGEE M dwarfs</em></div><div class="no-break ml-3">2019</div></div>
+<div class="small mb-2">Poster presentation at AAS Meeting 233, Seattle WA [<a href="https://doi.org/10.5281/zenodo.2536586" target="_blank">poster</a>]</div>
+
+<div class="d-flex justify-content-between"><div><em>Data-Driven Spectral Models for APOGEE M Dwarfs</em></div><div class="no-break ml-3">2018</div></div>
+<div class="small mb-2">Poster presentation at AAS Meeting 231, Washington DC [<a href="http://doi.org/10.5281/zenodo.1146909" target="_blank">poster</a>]</div>
+
+<div class="d-flex justify-content-between"><div><em>Modeling Stellar Parameters for High Resolution Late-M and Early-L Dwarf SDSS/APOGEE Spectra</em></div><div class="no-break ml-3">2017</div></div>
+<div class="small mb-2">Poster presentation at AAS Meeting 229, Grapevine TX [<a href="http://doi.org/10.5281/zenodo.1116625" target="_blank">poster</a>]</div>
+
+<div class="d-flex justify-content-between"><div><em>Data Driven Models for APOGEE M dwarfs</em></div><div class="no-break ml-3">2017</div></div>
+<div class="small mb-2">Talk at Stars Meeting &amp; Milky Way Meeting, MPIA, Heidelberg, Germany</div>
+
+<div class="d-flex justify-content-between"><div><em>Identification of H-band Absorption Lines in High Resolution APOGEE Spectra of the Lowest Mass Stars</em></div><div class="no-break ml-3">2016</div></div>
+<div class="small mb-2">Poster presentation at the national SACNAS Conference, Long Beach CA</div>
+
+<!-- Telescope Time -->
+<h5 class="text-primary mt-4">Telescope Time Awarded</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><em>TESS Eclipsing Binaries in Open Clusters Survey</em></div><div class="no-break ml-3">2022 &mdash; 2023</div></div>
+<div class="small mb-2">PI: <strong>APO 3.5 meter</strong> &mdash; 16 total half nights with ARCES/KOSMOS spectrographs</div>
+
+<div class="d-flex justify-content-between"><div><em>Training the Cannon: Calibrating APOGEE Observations of Ultracool Dwarfs</em></div><div class="no-break ml-3">2018 &mdash; 2019</div></div>
+<div class="small mb-2">Co-I: <strong>NASA IRTF</strong> &mdash; 6 nights with iShell spectrograph (PI: Adam Burgasser)</div>
+
+<div class="d-flex justify-content-between"><div><em>APOGEE-2 Survey of the Lowest-Mass Stars and Brown Dwarfs: Composition, Chemistry and Companions</em></div><div class="no-break ml-3">2017 &mdash; 2018</div></div>
+<div class="small mb-2">Co-I: <strong>APOGEE 2.5-meter</strong> &mdash; Fibers for ancillary survey (PI: Adam Burgasser)</div>
+
+<!-- Observing Experience -->
+<h5 class="text-primary mt-4">Observing Experience</h5>
+<hr class="mt-0">
+
+<p><strong>Apache Point Observatory (APO) 3.5m</strong></p>
+<table class="table table-sm table-borderless small mb-2">
+    <tr><td>6 half nights (remote), Instruments: ARCES &amp; KOSMOS</td><td class="text-right no-break">Q1 2023</td></tr>
+    <tr><td>8 half nights (remote), Instruments: ARCES &amp; KOSMOS</td><td class="text-right no-break">Q4 2022</td></tr>
+    <tr><td>4 half nights (onsite), Instruments: ARCES, KOSMOS, ARCTIC</td><td class="text-right no-break">Q3 2022</td></tr>
+    <tr><td>2 half nights (remote), Instruments: ARCES &amp; KOSMOS</td><td class="text-right no-break">Q2 2022</td></tr>
+    <tr><td>2 half nights (remote), Instruments: ARCES, TripleSpec, DIS, NICFPS, ARCTIC</td><td class="text-right no-break">Q4 2020</td></tr>
+</table>
+
+<p><strong>Manastash Ridge Observatory (MRO) 30in</strong></p>
+<div class="d-flex justify-content-between small mb-3"><div>1 full night (onsite)</div><div class="no-break">Q4 2023</div></div>
+
+<!-- Research Mentorship -->
+<h5 class="text-primary mt-4">Research Mentorship</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><strong>Co-founder of YVC-UW Partnership for Research in Astrophysics (YUPRA)</strong></div><div class="no-break ml-3">Summer 2024</div></div>
+<p class="small mt-1">Co-founded a partnership program between Yakima Valley Community College (YVC) and University of Washington (UW) designed to expose underrepresented students from eastern Washington to research. Received $50k grant from Washington Space Grant to operate the summer 2024 REU and provide student stipends. Designed student research projects and served as primary research mentor for six YVC undergraduates. Project webpage: <a href="https://jessicabirky.com/yupra/" target="_blank">jessicabirky.com/yupra/</a></p>
+
+<div class="d-flex justify-content-between"><div><strong>Mentor for Pre-Major in Astronomy Program (Pre-MAP)</strong></div><div class="no-break ml-3">Fall 2022</div></div>
+<p class="small mt-1">Served as mentor for <a href="http://depts.washington.edu/premap/about/" target="_blank">Pre-MAP</a>: a program designed to expose incoming UW students to programming and/or scientific research who are traditionally underrepresented in astronomy.</p>
+
+<p><u>Students mentored:</u></p>
+<table class="table table-sm table-borderless small mb-0">
+    <tr><td><strong>Karime Estrada</strong> (YUPRA REU)</td><td class="text-right no-break">Summer 2024</td></tr>
+    <tr><td><strong>Josue Cruz</strong> (YUPRA REU)</td><td class="text-right no-break">Summer 2024</td></tr>
+    <tr><td><strong>Alexandra Sanchez</strong> (YUPRA REU)</td><td class="text-right no-break">Summer 2024</td></tr>
+    <tr><td><strong>Michelle Marquez</strong> (YUPRA REU)</td><td class="text-right no-break">Summer 2024</td></tr>
+    <tr><td><strong>Julizza Gomez</strong> (YUPRA REU)</td><td class="text-right no-break">Summer 2024</td></tr>
+    <tr><td><strong>Marshall Hobson-Ritz</strong> (UW post-bac; now <u>PhD student at University of Maryland</u>)</td><td class="text-right no-break">Jan 2023 &mdash; Present</td></tr>
+    <tr><td><strong>John Delker</strong> (UW undergrad, PreMAP; now <u>PhD student at Michigan State</u>)</td><td class="text-right no-break">Nov 2022 &mdash; Dec 2022</td></tr>
+    <tr><td><strong>Leah Peterson</strong> (UW undergrad, PreMAP)</td><td class="text-right no-break">Nov 2022 &mdash; Sept 2023</td></tr>
+    <tr><td><strong>Peter Gwartney</strong> (UW undergrad; now <u>PhD student University of Alabama</u>)</td><td class="text-right no-break">Jun 2021 &mdash; Sept 2022</td></tr>
+    <tr><td><strong>Rachel Wong</strong> (UW undergrad, co-mentored with PhD student Tyler Gordon)</td><td class="text-right no-break">Jun 2021 &mdash; Sept 2022</td></tr>
+</table>
+
+<!-- Leadership and Service -->
+<h5 class="text-primary mt-4">Leadership and Service</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><strong>Department Grad Student Representative</strong></div><div class="no-break ml-3">Summer 2024 &mdash;</div></div>
+<p class="small mt-1">Represent and advocate for graduate student interests at department faculty meetings, manage the assignment of grad jobs, and plan graduate student orientation and community events. Also initiated the development of a grad wiki website for documenting resources.</p>
+
+<div class="d-flex justify-content-between"><div><strong>Lead Teaching Assistant</strong></div><div class="no-break ml-3">Fall 2024 &mdash;</div></div>
+<p class="small mt-1">Developed a new training program for all new TAs in the department. This includes writing a TA handbook, helping TAs develop discussion materials, providing teaching feedback, as well as assisting in solving any class issues.</p>
+
+<!-- Teaching Experience -->
+<h5 class="text-primary mt-4">Teaching Experience</h5>
+<hr class="mt-0">
+
+<p><strong><u>Guest Lecturer:</u></strong> ASTR 511 (graduate galactic dynamics), ASTR 425 (undergrad cosmology)</p>
+
+<p><strong><u>Teaching Assistant:</u></strong> Lead weekly lab or discussion sections, held office hours, and graded assignments/exams for both intro and advanced astronomy courses:</p>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 421: Stellar Theory and Observations</strong> (Instructor: Emily Levesque)</div><div class="no-break ml-3">Winter 2025</div></div>
+<div class="small mb-2"><em>Upper-division major course. Observations and theory of the atmospheres, chemical composition, internal structure, energy sources, and evolutionary history of stars.</em></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 101: Introduction to Astronomy</strong> (Instructor: Chris Laws)</div><div class="no-break ml-3">Spring 2024</div></div>
+<div class="small mb-2"><em>Intro course for non-science majors. Introduction to the universe, with emphasis on conceptual comprehension.</em></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 421: Stellar Theory and Observations</strong> (Instructor: Emily Levesque)</div><div class="no-break ml-3">Winter 2024</div></div>
+<div class="small mb-3"></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 150: The Planets</strong> (Instructor: Toby Smith)</div><div class="no-break ml-3">Fall 2023</div></div>
+<div class="small mb-2"><em>Intro course for non-science majors. Survey of the planets of the solar system.</em></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 101: Introduction to Astronomy</strong> (Instructor: Chris Laws)</div><div class="no-break ml-3">Summer 2023</div></div>
+<div class="small mb-3"></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 150: The Planets</strong> (Instructor: Nicole Kelly)</div><div class="no-break ml-3">Spring 2021</div></div>
+<div class="small mb-3"></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 150: The Planets</strong> (Instructors: Nicole Kelly, Eric Agol)</div><div class="no-break ml-3">Winter 2021</div></div>
+<div class="small mb-3"></div>
+
+<div class="d-flex justify-content-between"><div><strong>ASTR 102: Introduction to Astronomy</strong> (Instructor: Scott Anderson)</div><div class="no-break ml-3">Fall 2020</div></div>
+<div class="small mb-2"><em>Intro course for STEM majors. Emphasis on mathematical and physical comprehension of nature, the sun, stars, galaxies, and cosmology.</em></div>
+
+<!-- Other Service and Outreach -->
+<h5 class="text-primary mt-4">Other Service and Outreach</h5>
+<hr class="mt-0">
+
+<table class="table table-sm table-borderless small mb-0">
+    <tr><td>Astronomy Grad Congress Representative</td><td class="text-right no-break">Fall 2024 &mdash; Present</td></tr>
+    <tr><td>Planetarium Volunteer &mdash; outreach shows at the UW planetarium</td><td class="text-right no-break">Fall 2023 &mdash; Present</td></tr>
+    <tr><td>Astronomy on Tap Seattle &mdash; Organizer &amp; Livestream Manager</td><td class="text-right no-break">Fall 2022 &mdash; Fall 2024</td></tr>
+    <tr><td><code>VPLanet</code> Workshop III &mdash; SOC and Session Lead</td><td class="text-right no-break">Sept 2023</td></tr>
+    <tr><td>Yakima Valley CC &mdash; organized overnight field trip for students to observe at MRO</td><td class="text-right no-break">Oct 2023</td></tr>
+    <tr><td>Apache Point Observatory &mdash; Telescope Allocation Committee</td><td class="text-right no-break">Fall 2020 &mdash; Fall 2022</td></tr>
+    <tr><td>AAS Foundations of astronomical data science workshop &mdash; volunteer helper</td><td class="text-right no-break">Jan 2023</td></tr>
+    <tr><td>Yakima Valley CC &mdash; Outreach talk: Research in modern Astronomy</td><td class="text-right no-break">Nov 2022</td></tr>
+    <tr><td>UW Pre-MAP program &mdash; Research Mentor</td><td class="text-right no-break">Fall 2022</td></tr>
+    <tr><td><code>VPLanet</code> Workshop II &mdash; SOC and Session Lead</td><td class="text-right no-break">Sept 2022</td></tr>
+</table>
+
+<!-- Engineering Experience -->
+<h5 class="text-primary mt-4">Engineering Experience</h5>
+<hr class="mt-0">
+
+<div class="d-flex justify-content-between"><div><strong>Design Team</strong> &mdash; UCSD Human Powered Submarine Club</div><div class="no-break ml-3">Sept 2015 &mdash; May 2017</div></div>
+<p class="small mt-1">Prototyped 3D submarine hull profiles to minimize fluid drag, while subject to constraints of internal diving/safety equipment. Designed submarine propulsion fin mechanism, CADed Solidworks models, and prototyped using 3D printing.</p>
+
+<!-- Professional Development -->
+<h5 class="text-primary mt-4">Professional Development</h5>
+<hr class="mt-0">
+
+<table class="table table-sm table-borderless small mb-0">
+    <tr><td>NBIA Summer School on Astrophysical Dynamics of Gravitating Systems &mdash; <em>Copenhagen, Denmark</em></td><td class="text-right no-break">Aug 2024</td></tr>
+    <tr><td>AI-driven discovery in physics and astrophysics &mdash; <em>Tokyo, Japan</em></td><td class="text-right no-break">Jan 2024</td></tr>
+    <tr><td>Cool Stars 20.5 &mdash; <em>Virtual Conference</em></td><td class="text-right no-break">Mar 2021</td></tr>
+    <tr><td>NExSS Quantitative Habitability Science Workshop &mdash; <em>Online</em></td><td class="text-right no-break">Dec 2020</td></tr>
+    <tr><td>online.tess.science &mdash; <em>Online workshop</em></td><td class="text-right no-break">Sep 2020</td></tr>
+    <tr><td>TESS Ninja 3: Expanding the Science of TESS &mdash; <em>Sydney, Australia</em></td><td class="text-right no-break">Feb 2020</td></tr>
+    <tr><td>ZTF Collaboration Meeting &mdash; <em>UW Seattle, WA</em></td><td class="text-right no-break">Sept 2019</td></tr>
+    <tr><td>Caltech FUTURE of Physics Workshop &mdash; <em>Pasadena, CA</em></td><td class="text-right no-break">Nov 2018</td></tr>
+    <tr><td>M33 HST Survey Meeting &mdash; <em>Ringberg Castle, Tegernsee, Germany</em></td><td class="text-right no-break">Jul 2018</td></tr>
+    <tr><td>Conference for Undergraduate Women in Physics &mdash; <em>Cal Poly Pomona, CA</em></td><td class="text-right no-break">Jan 2018</td></tr>
+    <tr><td>Gaia Sprint &mdash; <em>Internationales Wissenschaftsforum Heidelberg, Germany</em></td><td class="text-right no-break">Jul 2017</td></tr>
+    <tr><td>Conference for Undergraduate Women in Physics &mdash; <em>UC Los Angeles, CA</em></td><td class="text-right no-break">Jan 2017</td></tr>
+</table>
+
+<!-- Graduate Coursework -->
+<h5 class="text-primary mt-4">Graduate Coursework</h5>
+<hr class="mt-0">
+
+<p>Radiative Processes, Thermo/hydrodynamics, Stellar Structure and Evolution, Exoplanets, Interstellar &amp; Intergalactic Medium, Galactic Structure &amp; Dynamics, Astrostatistics, Machine Learning, Data Visualization</p>
+
+<!-- References -->
+<h5 class="text-primary mt-4">References</h5>
+<hr class="mt-0">
+
+<table class="table table-sm table-borderless mb-0">
+    <tr><td><strong>Prof. Rory Barnes</strong> (UW) &mdash; PhD advisor</td><td class="text-right"><a href="mailto:rkb9@uw.edu">rkb9@uw.edu</a></td></tr>
+    <tr><td><strong>Prof. James Davenport</strong> (UW/DIRAC) &mdash; PhD co-advisor</td><td class="text-right"><a href="mailto:jrad@uw.edu">jrad@uw.edu</a></td></tr>
+    <tr><td><strong>Prof. Adam Burgasser</strong> (UCSD) &mdash; undergrad research advisor</td><td class="text-right"><a href="mailto:aburgasser@ucsd.edu">aburgasser@ucsd.edu</a></td></tr>
+    <tr><td><strong>Prof. David Hogg</strong> (NYU/MPIA/Flatiron) &mdash; undergrad research advisor</td><td class="text-right"><a href="mailto:david.hogg@nyu.edu">david.hogg@nyu.edu</a></td></tr>
+</table>
+
+</div>
+</div>

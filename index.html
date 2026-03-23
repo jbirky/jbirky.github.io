@@ -1,65 +1,39 @@
-<!DOCTYPE HTML>
-<html>
+---
+layout: default
+title : Homepage
+navbar_title: Home
+---
 
-<head>
-  <title>Jessica Birky</title>
-  <meta name="description" content="website description" />
-  <meta name="keywords" content="website keywords, website keywords" />
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <link rel="stylesheet" type="text/css" href="style/style.css" title="style" />
-</head>
-
-<body>
-  <div id="main">
-    <div id="header">
-      <div id="logo">
-        <div id="logo_text">
-          <h1><a href="index.html">Jessica Birky</a></h1>
-          <!-- <h2>---- astrophysics PhD student ----</h2> -->
-        </div>
-      </div>
-      <div id="menubar">
-        <ul id="menu">
-          <li class="selected"><a href="index.html">Home</a></li>
-          <li><a href="research.html">Research</a></li>
-          <li><a href="https://github.com/jbirky">Code</a></li>
-          <li><a href="teaching.html">Teaching</a></li>
-          <li><a href="cv/jbirky_cv.pdf">CV</a></li>
-        </ul>
-      </div>
+<div class="row">
+    <div class="col-lg-3 col-md-4">
+        {% include widgets/profile_card_mini.html %}
     </div>
+    <div class="col-lg-9 col-md-8">
 
-    <div id="site_content">
-      <div class="sidebar">
-        <h2>Contact</h2>
-        <hr><br>
-        Email: jbirky at uw dot edu <br>
-        Github: <a href="https://github.com/jbirky">jbirky</a>  <br>
-        Links: 
-        [<a href="https://ui.adsabs.harvard.edu/search/q=author%3A%22Birky%2C%20Jessica%22&sort=date%20desc%2C%20bibcode%20desc&p_=0"><font color="red">ADS</font></a>]  
-        [<a href="http://depts.washington.edu/astron/profile/birky-jessica/"><font color="red">UW</font></a>]      
-      </div>
+        {% include widgets/profile_card_bio_only.html %}
 
-      <div id="content">
-        <h2>About</h2>
-        I'm a grad student and NSF fellow at the University of Washington. Generally I am interested in large scale astronomical surveys, especially with applications to studying stellar populations, and understanding the structure and evolution of the Milky Way.
-        <p></p>
+        <!-- Debugging widgets -->
+        {% include widgets/debug_repo_name.html %}
+        {% include widgets/debug_url.html %}
 
-        <span class="left"><img src="content/profile.jpg" style="width:300px"/></span>
-        Currently I work with <a href="https://jradavenport.github.io/">James Davenport (UW/DIRAC)</a> and <a href="https://depts.washington.edu/astron/profile/barnes-rory/">Rory Barnes (UW)</a> on studying the tidal evolution of binary stars using eclipsing binaries in K2/TESS.
-        <p></p>
-        As an undergrad at UC San Diego, I worked with <a href="http://pono.ucsd.edu/~adam/wordpress/">Adam Burgasser (UCSD)</a> on constructing a <a href="https://github.com/jbirky/apogee_tools">forward modeling pipeline</a> for inferring atmospheric parameters of late-M/early-L dwarfs in the Apache Point Observatory Galactic Evolution Experiment (<a href="https://www.sdss.org/">APOGEE</a>) survey.
-        <p></p>
-        Additionally I spent two summers at the <a href="http://www.mpia.de/en">Max Planck Institute f<span>&#252;</span>r Astronomie</a> (in Heidelberg, Germany) with <a href="https://cosmo.nyu.edu/hogg/">David Hogg (NYU/MPIA/Flatiron)</a> using data-driven approaches to modeling fundamental parameters of M dwarfs in APOGEE.
-        <p></p>
-        For more information, you can read my <a href="cv/jbirky_cv.pdf"><font color="red">CV</font></a>. 
-      </div>
+        {% if site.data.display.homepage.show_experience %}
+            {% include widgets/experience_card.html %}
+        {% endif %}
+
+        {% if site.data.display.homepage.show_news %}
+        {% assign count_news = site.news | size %}
+        {% if count_news > 0 %}
+        {% include widgets/news_card.html limit=site.data.display.homepage.num_news %}
+        {% endif %}
+        {% endif %}
+
+        {% if site.data.display.homepage.show_selected_publications %}
+        {% assign pubs = site.publications | sort: "date" | reverse | where: "selected", true %}
+        {%
+        include widgets/publication_card.html
+        publications=pubs
+        title='<i class="fas fa-star"></i> Selected Publications'
+        %}
+        {% endif %}
     </div>
-
-    <div id="footer">
-      <a href="https://github.com/jbirky/jbirky.github.io">Copyright &copy; Jessica Birky</a> | <a href="http://www.html5webtemplates.co.uk">Source</a>
-    </div>
-  </div>
-</body>
-</html>
-`
+</div>

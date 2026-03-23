@@ -1,0 +1,14 @@
+# Site settings
+# Set baseurl to "" if hosting at username.github.io
+# Set baseurl to "/repo-name" if hosting at username.github.io/repo-name
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-email-protect
+
+collections:
+  - publications
+  - news
+  - showcase
