@@ -1,6 +1,6 @@
-primary_name: "Jessica Birky"
+primary_name: "Jess Birky"
 secondary_name: ""
-navbar_name: "Jessica Birky"
+navbar_name: "Jess Birky"
 
 positions:
 - name: PhD Candidate &amp; NSF Fellow
@@ -8,6 +8,7 @@ positions:
 
 email: "jbirky@uw.edu"
 cv_link: /assets/jbirky_cv.pdf
+gscholar: https://scholar.google.com/citations?user=rq4yu_UAAAAJ&hl=en
 github: jbirky
 ads: https://ui.adsabs.harvard.edu/search/q=author%3A%22Birky%2C%20Jessica%22&sort=date%20desc%2C%20bibcode%20desc&p_=0
 # twitter:
