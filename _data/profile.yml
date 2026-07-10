@@ -3,8 +3,8 @@ secondary_name: ""
 navbar_name: "Jess Birky"
 
 positions:
-- name: PhD Candidate &amp; NSF Fellow
-- name: Department of Astronomy, University of Washington
+- name: Postdoctoral Researcher
+- name: <a href="https://www.ou.edu/cas/physics-astronomy" target="_blank">OU Department of Physics and Astronomy</a>
 
 email: "jbirky@uw.edu"
 cv_link: /assets/jbirky_cv.pdf
@@ -18,7 +18,7 @@ orcid: 0000-0002-7961-6881
 short_bio_text_justify: false
 short_bio: >-
   <p>
-    I'm a PhD candidate UW interested in computational astrophysics, data science, and open source code. 
+    I'm a postdoc at OU interested in computational astrophysics, data science, and open source code. 
     I work on finding novel ways to use large-scale surveys, probabilistic inference, and machine learning to understand the fundamental properties of stars.
   </p>
 
@@ -30,7 +30,7 @@ education:
   position: >-
     PhD Astronomy (2026) <br/>
     MS Astronomy (2021)
-  date: 2019 - present
+  date: 2019 - 2026
 - name: University of California, San Diego
   position: BS Physics
   date: 2015 - 2019
