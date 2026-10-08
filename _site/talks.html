@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Template: https://github.com/luost26/academic-homepage -->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Talks - Jess Birky</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css" integrity="sha512-b1ASx0WHgVFL5ZQhTgiPWX+68KjS38Jk87jg7pe+qC7q9YkEtFq0z7xCglv7qGIs/68d3mAp+StfC8WKC5SSAg==" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" integrity="sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/global.css">
+</head>
+<body class="bg-light" >
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark fixed-top mb-5 shadow-sm">
+    <div class="container-lg">
+        <a class="navbar-brand" href="/">Jess Birky</a>
+        <button class="navbar-toggler" style="font-size: 1em; padding: 0.5em;" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-map"></i> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                
+                <li class="nav-item ">
+                    
+                    <a class="nav-link" href="/">Home</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                    <a class="nav-link" href="/publications">Publications</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                    <a class="nav-link" href="/code">Open Source</a>
+                    
+                </li>
+                
+                <li class="nav-item active">
+                    
+                    <a class="nav-link" href="/talks">Talks</a>
+                    
+                </li>
+                
+                <li class="nav-item ">
+                    
+                    <a class="nav-link" href="/cv">CV</a>
+                    
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <div class="container-lg">
+        <style>
+    .talk-card { transition: transform .15s ease, box-shadow .15s ease; }
+    .talk-card:hover { transform: translateY(-3px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+    .talk-thumb { position: relative; width: 100%; padding-top: 56.25%; /* 960x540 */ overflow: hidden; background: #000; }
+    .talk-thumb iframe { position: absolute; top: 0; left: 0; width: 960px; height: 540px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .talk-card a.stretched-link:focus { outline: none; }
+</style>
+
+<h2 class="pt-4">Talks</h2>
+<p class="text-muted">
+    Slides for my talks, made with
+    <a href="https://github.com/jbirky/parallax-presentations" target="_blank">parallax-presentations</a>.
+    Source: <a href="https://github.com/jbirky/presentations" target="_blank"><i class="fab fa-github"></i> jbirky/presentations</a>
+</p>
+
+<div id="talks-gallery" class="row my-3">
+    <div class="col-12 text-muted" id="talks-status"><i class="fas fa-spinner fa-spin"></i> Loading talks&hellip;</div>
+</div>
+
+<script>
+(function () {
+    var REPO = "jbirky/presentations";
+    var BRANCH = "main";
+    var PAGES = "https://jessicabirky.com/presentations/";
+    // Folder names in the presentations repo to show, in display order
+    var INCLUDE = [
+        "astro_seminar_9_22",
+        "thesis"
+    ];
+
+    var gallery = document.getElementById("talks-gallery");
+    var status = document.getElementById("talks-status");
+
+    function prettify(name) {
+        return name.replace(/[_-]+/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    }
+
+    function escapeHtml(s) {
+        var d = document.createElement("div");
+        d.textContent = s;
+        return d.innerHTML;
+    }
+
+    function fitThumbs() {
+        document.querySelectorAll(".talk-thumb").forEach(function (box) {
+            var iframe = box.querySelector("iframe");
+            if (iframe) iframe.style.transform = "scale(" + box.clientWidth / 960 + ")";
+        });
+    }
+
+    function card(talk) {
+        var url = PAGES + talk.name + "/presentation.html";
+        var date = talk.date
+            ? talk.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+            : "";
+        var meta = [date, talk.slides ? talk.slides + " slides" : ""].filter(Boolean).join(" &middot; ");
+        var col = document.createElement("div");
+        col.className = "col-lg-4 col-md-6 mb-4";
+        col.innerHTML =
+            '<div class="talk-card card h-100 bg-white shadow-sm rounded-xl border-0">' +
+                '<div class="talk-thumb rounded-xl-top">' +
+                    '<iframe src="' + url + '" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>' +
+                '</div>' +
+                '<div class="card-body">' +
+                    '<h5 class="card-title mb-1">' +
+                        '<a class="stretched-link" href="' + url + '" target="_blank">' + escapeHtml(talk.title) + '</a>' +
+                    '</h5>' +
+                    '<p class="card-text small text-muted mb-0">' + meta + '</p>' +
+                '</div>' +
+            '</div>';
+        return col;
+    }
+
+    function loadMeta(name) {
+        return fetch("https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/" + name + "/presentation.json")
+            .then(function (r) { return r.ok ? r.json() : {}; })
+            .catch(function () { return {}; })
+            .then(function (j) {
+                var title = j.title && j.title !== name ? j.title : prettify(name);
+                return {
+                    name: name,
+                    title: title,
+                    date: j.createdAt ? new Date(j.createdAt) : null,
+                    slides: Array.isArray(j.slides) ? j.slides.length : 0
+                };
+            });
+    }
+
+    Promise.all(INCLUDE.map(loadMeta)).then(function (talks) {
+        status.remove();
+        talks.forEach(function (t) { gallery.appendChild(card(t)); });
+        fitThumbs();
+    });
+
+    window.addEventListener("resize", fitThumbs);
+})();
+</script>
+
+    </div>
+    <footer class="footer border-top py-2 mt-5 bg-white small">
+    <div class="container-lg">
+        <div class="row my-3">
+            <div class="col-6">
+                <div class="text-muted">
+                    <i>Last updated: Oct 2026</i>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="text-right text-muted">
+                    <a href="https://github.com/luost26/academic-homepage" target="_blank"><i class="fas fa-pencil-ruler"></i> academic-homepage</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.7.9/jquery.lazy.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js" integrity="sha512-XKa9Hemdy1Ui3KSGgJdgMyYlUg1gM+QhL6cnlyTe2qzMCYm4nAZ1PsVerQzTTXzonUR+dmswHqgJPuwCq1MaAg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/github-buttons/2.14.2/buttons.min.js" integrity="sha512-OYwZx04hKFeFNYrWxIyo3atgGpb+cxU0ENWBZs72X7T9U+NoHPM1ftUn/Mfw7dRDXrqWA6M1wBg6z6fGE32aeA==" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" integrity="sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" integrity="sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            renderMathInElement(document.body, {
+              delimiters: [
+                  {left: '$$', right: '$$', display: true},
+                  {left: '$', right: '$', display: false}
+              ],
+              throwOnError : false
+            });
+        });
+    </script>
+    <script src="/assets/js/common.js"></script>
+    <script src="/assets/js/bubble_visual_hash.js"></script>
+    <script src="/assets/js/semantic_scholar_citation_count.js"></script>
+</body>
+</html>

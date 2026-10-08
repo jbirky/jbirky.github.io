@@ -5,5 +5,7 @@ pages:
   url: /publications
 - name: Open Source
   url: /code
+- name: Talks
+  url: /talks
 - name: CV
   url: /cv

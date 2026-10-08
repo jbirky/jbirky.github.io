@@ -1,0 +1,103 @@
+---
+layout: default
+title: Talks
+navbar_title: Talks
+---
+
+<style>
+    .talk-card { transition: transform .15s ease, box-shadow .15s ease; }
+    .talk-card:hover { transform: translateY(-3px); box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; }
+    .talk-thumb { position: relative; width: 100%; padding-top: 56.25%; /* 960x540 */ overflow: hidden; background: #000; }
+    .talk-thumb iframe { position: absolute; top: 0; left: 0; width: 960px; height: 540px; border: 0; transform-origin: 0 0; pointer-events: none; }
+    .talk-card a.stretched-link:focus { outline: none; }
+</style>
+
+<h2 class="pt-4">Talks</h2>
+<p class="text-muted">
+    Slides for my talks, made with
+    <a href="https://github.com/jbirky/parallax-presentations" target="_blank">parallax-presentations</a>.
+    Source: <a href="https://github.com/jbirky/presentations" target="_blank"><i class="fab fa-github"></i> jbirky/presentations</a>
+</p>
+
+<div id="talks-gallery" class="row my-3">
+    <div class="col-12 text-muted" id="talks-status"><i class="fas fa-spinner fa-spin"></i> Loading talks&hellip;</div>
+</div>
+
+<script>
+(function () {
+    var REPO = "jbirky/presentations";
+    var BRANCH = "main";
+    var PAGES = "https://jessicabirky.com/presentations/";
+    // Folder names in the presentations repo to show, in display order
+    var INCLUDE = [
+        "astro_seminar_9_22",
+        "thesis"
+    ];
+
+    var gallery = document.getElementById("talks-gallery");
+    var status = document.getElementById("talks-status");
+
+    function prettify(name) {
+        return name.replace(/[_-]+/g, " ").replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+    }
+
+    function escapeHtml(s) {
+        var d = document.createElement("div");
+        d.textContent = s;
+        return d.innerHTML;
+    }
+
+    function fitThumbs() {
+        document.querySelectorAll(".talk-thumb").forEach(function (box) {
+            var iframe = box.querySelector("iframe");
+            if (iframe) iframe.style.transform = "scale(" + box.clientWidth / 960 + ")";
+        });
+    }
+
+    function card(talk) {
+        var url = PAGES + talk.name + "/presentation.html";
+        var date = talk.date
+            ? talk.date.toLocaleDateString("en-US", { year: "numeric", month: "short", day: "numeric" })
+            : "";
+        var meta = [date, talk.slides ? talk.slides + " slides" : ""].filter(Boolean).join(" &middot; ");
+        var col = document.createElement("div");
+        col.className = "col-lg-4 col-md-6 mb-4";
+        col.innerHTML =
+            '<div class="talk-card card h-100 bg-white shadow-sm rounded-xl border-0">' +
+                '<div class="talk-thumb rounded-xl-top">' +
+                    '<iframe src="' + url + '" loading="lazy" tabindex="-1" aria-hidden="true" scrolling="no"></iframe>' +
+                '</div>' +
+                '<div class="card-body">' +
+                    '<h5 class="card-title mb-1">' +
+                        '<a class="stretched-link" href="' + url + '" target="_blank">' + escapeHtml(talk.title) + '</a>' +
+                    '</h5>' +
+                    '<p class="card-text small text-muted mb-0">' + meta + '</p>' +
+                '</div>' +
+            '</div>';
+        return col;
+    }
+
+    function loadMeta(name) {
+        return fetch("https://raw.githubusercontent.com/" + REPO + "/" + BRANCH + "/" + name + "/presentation.json")
+            .then(function (r) { return r.ok ? r.json() : {}; })
+            .catch(function () { return {}; })
+            .then(function (j) {
+                var title = j.title && j.title !== name ? j.title : prettify(name);
+                return {
+                    name: name,
+                    title: title,
+                    date: j.createdAt ? new Date(j.createdAt) : null,
+                    slides: Array.isArray(j.slides) ? j.slides.length : 0
+                };
+            });
+    }
+
+    Promise.all(INCLUDE.map(loadMeta)).then(function (talks) {
+        status.remove();
+        talks.forEach(function (t) { gallery.appendChild(card(t)); });
+        fitThumbs();
+    });
+
+    window.addEventListener("resize", fitThumbs);
+})();
+</script>
